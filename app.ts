@@ -1,4 +1,4 @@
-import Server from './INFRAESTRUCTURA/server';
+import Server from './SERVICIO/server';
 
 const server = new Server();
 

@@ -1,8 +1,13 @@
 import express, { Application } from "express";
-import AppDataSource from "./dbConectionOptions";
+import cors from 'cors';
+import AppDataSource from "./Contexto/dbConectionOptions";
+import organizacionRouter from "../PROYECTO_AUDITORIA/Routes/organizacionRouter";
 class Server{
     private app: Application;
     private port: string;
+    private apiPaths = {
+        organizacion: '/api/organizacion',
+    }
    
 
     constructor() {
@@ -10,6 +15,10 @@ class Server{
         this.port = process.env.PORT || '8000';
         //Metodos iniciales
         this.dbConnection();
+        //Middlewares
+        this.middlewares();
+        //Definicion de las rutas
+        this.routes();
     }
 
     async dbConnection() {
@@ -31,6 +40,31 @@ class Server{
                 }
             }
         }
+    }
+    middlewares() {
+        
+        //Lectura del body
+        this.app.use(express.json());
+        //Carpeta publica
+        this.app.use(express.static('public'));
+        //CORS
+        this.app.use(cors({
+            origin: [
+                'https://web-auditoria-neon.vercel.app',
+                'https://web-auditoria-git-main-auditoriainternaecuador.vercel.app',
+                'https://web-auditoria-auditoriainternaecuador.vercel.app',
+                //Añade local host
+                'http://localhost:3000',
+                //Añade todo
+                '*'
+            ]
+            
+        }));
+    }
+
+
+    routes() {
+        this.app.use(this.apiPaths.organizacion, /*this.authMiddleware.bind(this),*/ organizacionRouter);
     }
 
     //prueba de conexion
