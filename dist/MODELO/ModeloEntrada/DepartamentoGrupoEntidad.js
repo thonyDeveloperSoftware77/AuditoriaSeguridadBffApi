@@ -2,22 +2,22 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DepartamentoGrupoEntidad = void 0;
 class DepartamentoGrupoEntidad {
-    get id() {
+    get gr_id_groups() {
         return this._gr_id_groups;
     }
-    set id(value) {
+    set gr_id_groups(value) {
         this._gr_id_groups = value;
     }
-    get nombre() {
+    get gr_name() {
         return this._gr_name;
     }
-    set nombre(value) {
+    set gr_name(value) {
         this._gr_name = value;
     }
-    get idOrganizacion() {
+    get bu_id_business_unit() {
         return this._bu_id_business_unit;
     }
-    set idOrganizacion(value) {
+    set bu_id_business_unit(value) {
         this._bu_id_business_unit = value;
     }
 }

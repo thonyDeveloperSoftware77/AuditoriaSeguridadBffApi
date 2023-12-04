@@ -18,10 +18,10 @@ class DepartamentoGrupoModelo {
     set nombre(value) {
         this._nombre = value;
     }
-    get idOrganizacion() {
+    get idDepartamento() {
         return this._idDepartamento;
     }
-    set idOrganizacion(value) {
+    set idDepartamento(value) {
         this._idDepartamento = value;
     }
 }

@@ -23,11 +23,11 @@ export class DepartamentoGrupoModelo {
         this._nombre = value;
     }
     
-    public get idOrganizacion(): number | undefined {
+    public get idDepartamento(): number | undefined {
         return this._idDepartamento;
     }
 
-    public set idOrganizacion(value: number | undefined) {
+    public set idDepartamento(value: number | undefined) {
         this._idDepartamento = value;
     }
 }

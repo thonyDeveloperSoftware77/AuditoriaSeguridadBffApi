@@ -26,6 +26,18 @@ class DepartamentoModelo {
     set idOrganizacion(value) {
         this._idOrganizacion = value;
     }
+    get grupos() {
+        return this._grupos;
+    }
+    set grupos(value) {
+        this._grupos = value;
+    }
+    get usuarios() {
+        return this._usuarios;
+    }
+    set usuarios(value) {
+        this._usuarios = value;
+    }
 }
 exports.DepartamentoModelo = DepartamentoModelo;
 //# sourceMappingURL=DepartamentoModelo.js.map

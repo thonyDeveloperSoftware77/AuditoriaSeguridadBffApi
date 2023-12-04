@@ -3,27 +3,27 @@ export class GrupoEntidad {
     private _gr_name?: string;
     private _gr_id_organization?: number;
 
-    public get id(): number | undefined {
+    public get gr_id_groups(): number | undefined {
         return this._gr_id_groups;
     }
 
-    public set id(value: number | undefined) {
+    public set gr_id_groups(value: number | undefined) {
         this._gr_id_groups = value;
     }
 
-    public get nombre(): string | undefined {
+    public get gr_name(): string | undefined {
         return this._gr_name;
     }
 
-    public set nombre(value: string | undefined) {
+    public set gr_name(value: string | undefined) {
         this._gr_name = value;
     }
     
-    public get idOrganizacion(): number | undefined {
+    public get gr_id_organization(): number | undefined {
         return this._gr_id_organization;
     }
 
-    public set idOrganizacion(value: number | undefined) {
+    public set gr_id_organization(value: number | undefined) {
         this._gr_id_organization = value;
     }
 }

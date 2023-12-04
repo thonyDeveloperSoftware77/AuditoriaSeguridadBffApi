@@ -26,6 +26,18 @@ class DepartamentoEntidad {
     set bu_id_organization(value) {
         this._bu_id_organization = value;
     }
+    get bu_gropus() {
+        return this._bu_groups;
+    }
+    set bu_gropus(value) {
+        this._bu_groups = value;
+    }
+    get bu_users() {
+        return this._bu_users;
+    }
+    set bu_users(value) {
+        this._bu_users = value;
+    }
 }
 exports.DepartamentoEntidad = DepartamentoEntidad;
 //# sourceMappingURL=DepartamentoEntidad.js.map

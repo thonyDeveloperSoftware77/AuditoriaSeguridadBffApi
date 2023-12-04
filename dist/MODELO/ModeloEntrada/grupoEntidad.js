@@ -2,24 +2,24 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GrupoEntidad = void 0;
 class GrupoEntidad {
-    get id() {
+    get gr_id_groups() {
         return this._gr_id_groups;
     }
-    set id(value) {
+    set gr_id_groups(value) {
         this._gr_id_groups = value;
     }
-    get nombre() {
+    get gr_name() {
         return this._gr_name;
     }
-    set nombre(value) {
+    set gr_name(value) {
         this._gr_name = value;
     }
-    get idOrganizacion() {
+    get gr_id_organization() {
         return this._gr_id_organization;
     }
-    set idOrganizacion(value) {
+    set gr_id_organization(value) {
         this._gr_id_organization = value;
     }
 }
 exports.GrupoEntidad = GrupoEntidad;
-//# sourceMappingURL=grupoEntidad.js.map
+//# sourceMappingURL=GrupoEntidad.js.map

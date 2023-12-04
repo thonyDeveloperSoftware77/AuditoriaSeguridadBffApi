@@ -1,8 +1,13 @@
+import { DepartamentoGrupoModelo } from "./DepartamentoGrupoModelo";
+import { DepartamentoUsuarioModelo } from "./DepartamentoUsuarioModelo";
+
 export class DepartamentoModelo{
     private _id?: number;
     private _nombre?: string;
     private _descripcion?: string;
     private _idOrganizacion?: number;
+    private _grupos?: DepartamentoGrupoModelo[];
+    private _usuarios?: DepartamentoUsuarioModelo[];
 
     public get id(): number | undefined {
         return this._id;
@@ -34,5 +39,21 @@ export class DepartamentoModelo{
 
     public set idOrganizacion(value: number | undefined) {
         this._idOrganizacion = value;
+    }
+
+    public get grupos(): DepartamentoGrupoModelo[] | undefined {
+        return this._grupos;
+    }
+
+    public set grupos(value: DepartamentoGrupoModelo[] | undefined) {
+        this._grupos = value;
+    }
+
+    public get usuarios(): DepartamentoUsuarioModelo[] | undefined {
+        return this._usuarios;
+    }
+
+    public set usuarios(value: DepartamentoUsuarioModelo[] | undefined) {
+        this._usuarios = value;
     }
 }

@@ -1,9 +1,3 @@
-//Cambia los nombres
-//private _cri_id_criticality?: number;
-//private _cri_value?: string;
-//private _cri_criterio?: string;
-
-
 export class CriticidadModelo{
     private _id?: number;
     private _valor?: number;
@@ -17,11 +11,11 @@ export class CriticidadModelo{
         this._id = value;
     }
 
-    public get nombre(): number | undefined {
+    public get valor(): number | undefined {
         return this._valor;
     }
 
-    public set nombre(value: number | undefined) {
+    public set valor(value: number | undefined) {
         this._valor = value;
     }
 

@@ -68,6 +68,54 @@ class ActivoEntidad {
     set ast_review_date(value) {
         this._ast_review_date = value;
     }
+    get ast_grupos() {
+        return this._ast_grupos;
+    }
+    set ast_grupos(value) {
+        this._ast_grupos = value;
+    }
+    get ast_usuarios() {
+        return this._ast_usuarios;
+    }
+    set ast_usuarios(value) {
+        this._ast_usuarios = value;
+    }
+    get ast_reviewer_grupos() {
+        return this._ast_reviewer_grupos;
+    }
+    set ast_reviewer_grupos(value) {
+        this._ast_reviewer_grupos = value;
+    }
+    get asst_reviewer_usuarios() {
+        return this._asst_reviewer_usuarios;
+    }
+    set asst_reviewer_usuarios(value) {
+        this._asst_reviewer_usuarios = value;
+    }
+    get cri_id_criteria() {
+        return this._cri_id_criteria;
+    }
+    set cri_id_criteria(value) {
+        this._cri_id_criteria = value;
+    }
+    get ctg_id_category() {
+        return this._ctg_id_category;
+    }
+    set ctg_id_category(value) {
+        this._ctg_id_category = value;
+    }
+    get clas_id_class() {
+        return this._clas_id_class;
+    }
+    set clas_id_class(value) {
+        this._clas_id_class = value;
+    }
+    get asst_id_organization() {
+        return this._asst_id_organization;
+    }
+    set asst_id_organization(value) {
+        this._asst_id_organization = value;
+    }
 }
 exports.ActivoEntidad = ActivoEntidad;
 //# sourceMappingURL=ActivoEntidad.js.map

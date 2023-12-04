@@ -2,11 +2,32 @@ import express, { Application } from "express";
 import cors from 'cors';
 import AppDataSource from "./Contexto/dbConectionOptions";
 import organizacionRouter from "../PROYECTO_AUDITORIA/Routes/organizacionRouter";
+import grupoRouter from "../PROYECTO_AUDITORIA/Routes/grupoRouter";
+import usersRouter from "../PROYECTO_AUDITORIA/Routes/userRouter";
+import etiquetaRouter from "../PROYECTO_AUDITORIA/Routes/etiquetaRouter";
+import clasificacion from "../PROYECTO_AUDITORIA/Routes/clasificacionRouter";
+import categoria from "../PROYECTO_AUDITORIA/Routes/categoriaRouter";
+import criticidad from "../PROYECTO_AUDITORIA/Routes/criticidadRouter";
+import departamentoUsuarioRouter from "../PROYECTO_AUDITORIA/Routes/departamentoUsuarioRouter";
+import departamentoGrupoRouter from "../PROYECTO_AUDITORIA/Routes/departamentoGrupoRouter";
+import departamentoRouter from "../PROYECTO_AUDITORIA/Routes/departamentoRouter";
+
+
+
 class Server{
     private app: Application;
     private port: string;
     private apiPaths = {
         organizacion: '/api/organizacion',
+        grupo: '/api/grupo',
+        users: '/api/users',
+        etiqueta: '/api/etiqueta',
+        clasificacion: '/api/clasificacion',
+        categoria: '/api/categoria',
+        criticidad: '/api/criticidad',
+        departamentoUsuario: '/api/departamentoUsuario',
+        departamentoGrupo: '/api/departamentoGrupo',
+        departamento: '/api/departamento',
     }
    
 
@@ -65,6 +86,15 @@ class Server{
 
     routes() {
         this.app.use(this.apiPaths.organizacion, /*this.authMiddleware.bind(this),*/ organizacionRouter);
+        this.app.use(this.apiPaths.grupo, /*this.authMiddleware.bind(this),*/ grupoRouter);
+        this.app.use(this.apiPaths.users, /*this.authMiddleware.bind(this),*/ usersRouter);
+        this.app.use(this.apiPaths.etiqueta, /*this.authMiddleware.bind(this),*/ etiquetaRouter);
+        this.app.use(this.apiPaths.clasificacion, /*this.authMiddleware.bind(this),*/ clasificacion);
+        this.app.use(this.apiPaths.categoria, /*this.authMiddleware.bind(this),*/ categoria);
+        this.app.use(this.apiPaths.criticidad, /*this.authMiddleware.bind(this),*/ criticidad);
+        this.app.use(this.apiPaths.departamentoUsuario, /*this.authMiddleware.bind(this),*/ departamentoUsuarioRouter);
+        this.app.use(this.apiPaths.departamentoGrupo, /*this.authMiddleware.bind(this),*/ departamentoGrupoRouter);
+        this.app.use(this.apiPaths.departamento, /*this.authMiddleware.bind(this),*/ departamentoRouter);
     }
 
     //prueba de conexion
