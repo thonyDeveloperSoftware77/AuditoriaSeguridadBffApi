@@ -11,6 +11,12 @@ import criticidad from "../PROYECTO_AUDITORIA/Routes/criticidadRouter";
 import departamentoUsuarioRouter from "../PROYECTO_AUDITORIA/Routes/departamentoUsuarioRouter";
 import departamentoGrupoRouter from "../PROYECTO_AUDITORIA/Routes/departamentoGrupoRouter";
 import departamentoRouter from "../PROYECTO_AUDITORIA/Routes/departamentoRouter";
+import activoRouter from "../PROYECTO_AUDITORIA/Routes/activoRouter";
+import activoUsuarioRouter from "../PROYECTO_AUDITORIA/Routes/activoUsuarioRouter";
+import activoGrupoRouter from "../PROYECTO_AUDITORIA/Routes/activoGrupoRouter";
+import activoReviewerUserRouter from "../PROYECTO_AUDITORIA/Routes/activoReviewerUsuarioRouter";
+import activoReviewerGroupRouter from "../PROYECTO_AUDITORIA/Routes/activoReviewerGrupoRouter";
+import tipoActivoRouter from "../PROYECTO_AUDITORIA/Routes/tipoActivoRouter";
 
 
 
@@ -28,6 +34,12 @@ class Server{
         departamentoUsuario: '/api/departamentoUsuario',
         departamentoGrupo: '/api/departamentoGrupo',
         departamento: '/api/departamento',
+        activoUsuario: '/api/activoUsuario',
+        activoGrupo: '/api/activoGrupo',
+        activoReviewerUser: '/api/reviewerUser',
+        activoReviewerGroup: '/api/reviewerGroup',
+        activo: '/api/activo',
+        tipoActivo: '/api/tipoActivo'
     }
    
 
@@ -95,6 +107,12 @@ class Server{
         this.app.use(this.apiPaths.departamentoUsuario, /*this.authMiddleware.bind(this),*/ departamentoUsuarioRouter);
         this.app.use(this.apiPaths.departamentoGrupo, /*this.authMiddleware.bind(this),*/ departamentoGrupoRouter);
         this.app.use(this.apiPaths.departamento, /*this.authMiddleware.bind(this),*/ departamentoRouter);
+        this.app.use(this.apiPaths.activoUsuario, /*this.authMiddleware.bind(this),*/ activoUsuarioRouter);
+        this.app.use(this.apiPaths.activoGrupo, /*this.authMiddleware.bind(this),*/ activoGrupoRouter);
+        this.app.use(this.apiPaths.activoReviewerUser, /*this.authMiddleware.bind(this),*/ activoReviewerUserRouter);
+        this.app.use(this.apiPaths.activoReviewerGroup, /*this.authMiddleware.bind(this),*/ activoReviewerGroupRouter);
+        this.app.use(this.apiPaths.activo, /*this.authMiddleware.bind(this),*/ activoRouter);
+        this.app.use(this.apiPaths.tipoActivo, /*this.authMiddleware.bind(this),*/ tipoActivoRouter);
     }
 
     //prueba de conexion

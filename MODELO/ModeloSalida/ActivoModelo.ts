@@ -1,5 +1,11 @@
+import { ActivoGrupoModelo } from "./ActivoGrupoModelo";
+import { ActivoReviewerGrupoModelo } from "./ActivoReviewerGrupoModelo";
+import { ActivoReviewerUsuarioModelo } from "./ActivoReviewerUsuarioModelo";
+import { ActivoUsuarioModelo } from "./ActivoUsuarioModelo";
+
 export class ActivoModelo {
     private _id?: number;
+    private _id_organization?: number;
     private _code?: string;
     private _name?: string;
     private _description?: string;
@@ -7,9 +13,17 @@ export class ActivoModelo {
     private _label?: string;
     private _type?: string;
     private _criticality?: string;
+    private _id_criterio?: number;
+    private _id_categoria?: number;
+    private _id_clasificacion?: number;
     private _category?: string;
     private _class?: string;
     private _review_date?: Date;
+    private _ast_grupos? : ActivoGrupoModelo[];
+    private _ast_usuarios? : ActivoUsuarioModelo[];
+    private _ast_reviewer_grupos? : ActivoReviewerGrupoModelo[];
+    private _asst_reviewer_usuarios? : ActivoReviewerUsuarioModelo[];
+
     public get id(): number | undefined {
         return this._id;
     }
@@ -76,4 +90,55 @@ export class ActivoModelo {
     public set review_date(value: Date | undefined) {
         this._review_date = value;
     }
+    public get id_organization(): number | undefined {
+        return this._id_organization;
+    }
+    public set id_organization(value: number | undefined) {
+        this._id_organization = value;
+    }
+    public get ast_grupos(): ActivoGrupoModelo[] | undefined {
+        return this._ast_grupos;
+    }
+    public set ast_grupos(value: ActivoGrupoModelo[] | undefined) {
+        this._ast_grupos = value;
+    }
+    public get ast_usuarios(): ActivoUsuarioModelo[] | undefined {
+        return this._ast_usuarios;
+    }
+    public set ast_usuarios(value: ActivoUsuarioModelo[] | undefined) {
+        this._ast_usuarios = value;
+    }
+    public get ast_reviewer_grupos(): ActivoReviewerGrupoModelo[] | undefined {
+        return this._ast_reviewer_grupos;
+    }
+    public set ast_reviewer_grupos(value: ActivoReviewerGrupoModelo[] | undefined) {
+        this._ast_reviewer_grupos = value;
+    }
+    public get asst_reviewer_usuarios(): ActivoReviewerUsuarioModelo[] | undefined {
+        return this._asst_reviewer_usuarios;
+    }
+    public set asst_reviewer_usuarios(value: ActivoReviewerUsuarioModelo[] | undefined) {
+        this._asst_reviewer_usuarios = value;
+    }
+
+    public get id_criterio(): number | undefined {
+        return this._id_criterio;
+    }
+    public set id_criterio(value: number | undefined) {
+        this._id_criterio = value;
+    }
+    public get id_categoria(): number | undefined {
+        return this._id_categoria;
+    }
+    public set id_categoria(value: number | undefined) {
+        this._id_categoria = value;
+    }
+    public get id_clasificacion(): number | undefined {
+        return this._id_clasificacion;
+    }
+    public set id_clasificacion(value: number | undefined) {
+        this._id_clasificacion = value;
+    }
+
+
 }

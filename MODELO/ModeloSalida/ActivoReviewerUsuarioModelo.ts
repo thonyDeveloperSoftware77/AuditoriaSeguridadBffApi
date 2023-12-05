@@ -1,4 +1,4 @@
-export class ActivoReviwerUsuarioModelo {
+export class ActivoReviewerUsuarioModelo {
     private _idUsuario?: number;
     private _nombreUsuario?: string;
     private _apellidoUsuario?: string;

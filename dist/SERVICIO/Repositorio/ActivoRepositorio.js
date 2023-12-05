@@ -18,9 +18,9 @@ class ActivoRepositorio {
     constructor() {
         this._grupo = dbConectionOptions_1.default;
     }
-    obtenerActivo() {
+    obtenerActivo(id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = `EXEC sps_consulta_todo_asset`;
+            const query = `EXEC sps_consulta_todo_asset ${id}`;
             return yield this._grupo.query(query);
         });
     }

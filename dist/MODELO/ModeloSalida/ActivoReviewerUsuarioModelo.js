@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ActivoReviwerUsuarioModelo = void 0;
-class ActivoReviwerUsuarioModelo {
+exports.ActivoReviewerUsuarioModelo = void 0;
+class ActivoReviewerUsuarioModelo {
     get idUsuario() {
         return this._idUsuario;
     }
@@ -33,5 +33,5 @@ class ActivoReviwerUsuarioModelo {
         this._idActivo = value;
     }
 }
-exports.ActivoReviwerUsuarioModelo = ActivoReviwerUsuarioModelo;
+exports.ActivoReviewerUsuarioModelo = ActivoReviewerUsuarioModelo;
 //# sourceMappingURL=ActivoReviewerUsuarioModelo.js.map

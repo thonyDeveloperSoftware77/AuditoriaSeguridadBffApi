@@ -4,7 +4,7 @@ import AppDataSource from "../Contexto/dbConectionOptions";
 
 
 
-export class ActivoUsuarioRepositorio implements IActivoReviewerUsuarioRepositorio {
+export class ActivoReviewerUsuarioRepositorio implements IActivoReviewerUsuarioRepositorio {
     
         private _grupo = AppDataSource;
     

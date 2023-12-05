@@ -9,24 +9,24 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.departamentoDeleteHandler = exports.departamentoPostHandler = void 0;
+exports.departamentoUsuarioDeleteHandler = exports.departamentoUsuarioPostHandler = void 0;
 const DepartamentoUsuarioEntidad_1 = require("../../MODELO/ModeloEntrada/DepartamentoUsuarioEntidad");
 const DepartamentoUsuarioModelo_1 = require("../../MODELO/ModeloSalida/DepartamentoUsuarioModelo");
 const DepartamentoUsuarioRepositorio_1 = require("../../SERVICIO/Repositorio/DepartamentoUsuarioRepositorio");
-const departamentoPostHandler = (departamento) => __awaiter(void 0, void 0, void 0, function* () {
-    const departamentoEntrada = new DepartamentoUsuarioEntidad_1.DepartamentoUsuarioEntidad();
-    const departamentoSalida = new DepartamentoUsuarioModelo_1.DepartamentoUsuarioModelo();
-    departamentoEntrada.bu_id_business_unit = departamento.idDepartamento;
-    departamentoEntrada.usr_id_user = departamento.id;
-    yield new DepartamentoUsuarioRepositorio_1.DepartamentoUsuarioRepositorio().crearDepartamentoUsuario(departamentoEntrada);
-    departamentoSalida.idDepartamento = departamentoEntrada.bu_id_business_unit;
-    departamentoSalida.id = departamentoEntrada.usr_id_user;
-    return departamentoSalida;
+const departamentoUsuarioPostHandler = (departamentoUsuario) => __awaiter(void 0, void 0, void 0, function* () {
+    const departamentoUsuarioEntrada = new DepartamentoUsuarioEntidad_1.DepartamentoUsuarioEntidad();
+    const departamentoUsuarioSalida = new DepartamentoUsuarioModelo_1.DepartamentoUsuarioModelo();
+    departamentoUsuarioEntrada.bu_id_business_unit = departamentoUsuario.idDepartamento;
+    departamentoUsuarioEntrada.usr_id_user = departamentoUsuario.id;
+    yield new DepartamentoUsuarioRepositorio_1.DepartamentoUsuarioRepositorio().crearDepartamentoUsuario(departamentoUsuarioEntrada);
+    departamentoUsuarioSalida.idDepartamento = departamentoUsuarioEntrada.bu_id_business_unit;
+    departamentoUsuarioSalida.id = departamentoUsuarioEntrada.usr_id_user;
+    return departamentoUsuarioSalida;
 });
-exports.departamentoPostHandler = departamentoPostHandler;
-const departamentoDeleteHandler = (id) => __awaiter(void 0, void 0, void 0, function* () {
-    const departamentoEliminada = yield new DepartamentoUsuarioRepositorio_1.DepartamentoUsuarioRepositorio().eliminarDepartamentoUsuario(id);
-    return departamentoEliminada;
+exports.departamentoUsuarioPostHandler = departamentoUsuarioPostHandler;
+const departamentoUsuarioDeleteHandler = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const departamentoUsuarioEliminada = yield new DepartamentoUsuarioRepositorio_1.DepartamentoUsuarioRepositorio().eliminarDepartamentoUsuario(id);
+    return departamentoUsuarioEliminada;
 });
-exports.departamentoDeleteHandler = departamentoDeleteHandler;
+exports.departamentoUsuarioDeleteHandler = departamentoUsuarioDeleteHandler;
 //# sourceMappingURL=departamentoUsuarioHandler%20copy.js.map

@@ -25,6 +25,12 @@ const criticidadRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes
 const departamentoUsuarioRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/departamentoUsuarioRouter"));
 const departamentoGrupoRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/departamentoGrupoRouter"));
 const departamentoRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/departamentoRouter"));
+const activoRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/activoRouter"));
+const activoUsuarioRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/activoUsuarioRouter"));
+const activoGrupoRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/activoGrupoRouter"));
+const activoReviewerUsuarioRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/activoReviewerUsuarioRouter"));
+const activoReviewerGrupoRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/activoReviewerGrupoRouter"));
+const tipoActivoRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/tipoActivoRouter"));
 class Server {
     constructor() {
         this.apiPaths = {
@@ -38,6 +44,12 @@ class Server {
             departamentoUsuario: '/api/departamentoUsuario',
             departamentoGrupo: '/api/departamentoGrupo',
             departamento: '/api/departamento',
+            activoUsuario: '/api/activoUsuario',
+            activoGrupo: '/api/activoGrupo',
+            activoReviewerUser: '/api/reviewerUser',
+            activoReviewerGroup: '/api/reviewerGroup',
+            activo: '/api/activo',
+            tipoActivo: '/api/tipoActivo'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -100,6 +112,12 @@ class Server {
         this.app.use(this.apiPaths.departamentoUsuario, /*this.authMiddleware.bind(this),*/ departamentoUsuarioRouter_1.default);
         this.app.use(this.apiPaths.departamentoGrupo, /*this.authMiddleware.bind(this),*/ departamentoGrupoRouter_1.default);
         this.app.use(this.apiPaths.departamento, /*this.authMiddleware.bind(this),*/ departamentoRouter_1.default);
+        this.app.use(this.apiPaths.activoUsuario, /*this.authMiddleware.bind(this),*/ activoUsuarioRouter_1.default);
+        this.app.use(this.apiPaths.activoGrupo, /*this.authMiddleware.bind(this),*/ activoGrupoRouter_1.default);
+        this.app.use(this.apiPaths.activoReviewerUser, /*this.authMiddleware.bind(this),*/ activoReviewerUsuarioRouter_1.default);
+        this.app.use(this.apiPaths.activoReviewerGroup, /*this.authMiddleware.bind(this),*/ activoReviewerGrupoRouter_1.default);
+        this.app.use(this.apiPaths.activo, /*this.authMiddleware.bind(this),*/ activoRouter_1.default);
+        this.app.use(this.apiPaths.tipoActivo, /*this.authMiddleware.bind(this),*/ tipoActivoRouter_1.default);
     }
     //prueba de conexion
     listen() {

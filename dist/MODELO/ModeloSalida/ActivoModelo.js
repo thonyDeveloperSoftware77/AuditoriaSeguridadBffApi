@@ -68,6 +68,54 @@ class ActivoModelo {
     set review_date(value) {
         this._review_date = value;
     }
+    get id_organization() {
+        return this._id_organization;
+    }
+    set id_organization(value) {
+        this._id_organization = value;
+    }
+    get ast_grupos() {
+        return this._ast_grupos;
+    }
+    set ast_grupos(value) {
+        this._ast_grupos = value;
+    }
+    get ast_usuarios() {
+        return this._ast_usuarios;
+    }
+    set ast_usuarios(value) {
+        this._ast_usuarios = value;
+    }
+    get ast_reviewer_grupos() {
+        return this._ast_reviewer_grupos;
+    }
+    set ast_reviewer_grupos(value) {
+        this._ast_reviewer_grupos = value;
+    }
+    get asst_reviewer_usuarios() {
+        return this._asst_reviewer_usuarios;
+    }
+    set asst_reviewer_usuarios(value) {
+        this._asst_reviewer_usuarios = value;
+    }
+    get id_criterio() {
+        return this._id_criterio;
+    }
+    set id_criterio(value) {
+        this._id_criterio = value;
+    }
+    get id_categoria() {
+        return this._id_categoria;
+    }
+    set id_categoria(value) {
+        this._id_categoria = value;
+    }
+    get id_clasificacion() {
+        return this._id_clasificacion;
+    }
+    set id_clasificacion(value) {
+        this._id_clasificacion = value;
+    }
 }
 exports.ActivoModelo = ActivoModelo;
 //# sourceMappingURL=ActivoModelo.js.map

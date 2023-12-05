@@ -12,9 +12,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ActivoUsuarioRepositorio = void 0;
+exports.ActivoReviewerUsuarioRepositorio = void 0;
 const dbConectionOptions_1 = __importDefault(require("../Contexto/dbConectionOptions"));
-class ActivoUsuarioRepositorio {
+class ActivoReviewerUsuarioRepositorio {
     constructor() {
         this._grupo = dbConectionOptions_1.default;
     }
@@ -40,5 +40,5 @@ class ActivoUsuarioRepositorio {
         });
     }
 }
-exports.ActivoUsuarioRepositorio = ActivoUsuarioRepositorio;
+exports.ActivoReviewerUsuarioRepositorio = ActivoReviewerUsuarioRepositorio;
 //# sourceMappingURL=ActivoReviewerUsuarioRepositorio.js.map

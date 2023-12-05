@@ -1,6 +1,6 @@
 import { ActivoGrupoModelo } from "../ModeloSalida/ActivoGrupoModelo";
 import { ActivoReviewerGrupoModelo } from "../ModeloSalida/ActivoReviewerGrupoModelo";
-import { ActivoReviwerUsuarioModelo } from "../ModeloSalida/ActivoReviewerUsuarioModelo";
+import { ActivoReviewerUsuarioModelo } from "../ModeloSalida/ActivoReviewerUsuarioModelo";
 import { ActivoUsuarioModelo } from "../ModeloSalida/ActivoUsuarioModelo";
 
 export class ActivoEntidad {
@@ -22,7 +22,7 @@ export class ActivoEntidad {
     private _ast_grupos? : ActivoGrupoModelo[];
     private _ast_usuarios? : ActivoUsuarioModelo[];
     private _ast_reviewer_grupos? : ActivoReviewerGrupoModelo[];
-    private _asst_reviewer_usuarios? : ActivoReviwerUsuarioModelo[];
+    private _asst_reviewer_usuarios? : ActivoReviewerUsuarioModelo[];
 
 
     public get ast_id_asset(): number | undefined {
@@ -137,11 +137,11 @@ export class ActivoEntidad {
         this._ast_reviewer_grupos = value;
     }
 
-    public get asst_reviewer_usuarios(): ActivoReviwerUsuarioModelo[] | undefined {
+    public get asst_reviewer_usuarios(): ActivoReviewerUsuarioModelo[] | undefined {
         return this._asst_reviewer_usuarios;
     }
 
-    public set asst_reviewer_usuarios(value: ActivoReviwerUsuarioModelo[] | undefined) {
+    public set asst_reviewer_usuarios(value: ActivoReviewerUsuarioModelo[] | undefined) {
         this._asst_reviewer_usuarios = value;
     }
 

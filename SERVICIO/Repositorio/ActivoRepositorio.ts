@@ -8,8 +8,8 @@ export class ActivoRepositorio implements IActivoRepositorio {
     
         private _grupo = AppDataSource;
     
-        async obtenerActivo() {
-            const query = `EXEC sps_consulta_todo_asset`;
+        async obtenerActivo(id: number) {
+            const query = `EXEC sps_consulta_todo_asset ${id}`;
             return await this._grupo.query(query);
         }
     
