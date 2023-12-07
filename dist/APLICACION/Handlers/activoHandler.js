@@ -17,6 +17,7 @@ const ActivoRepositorio_1 = require("../../SERVICIO/Repositorio/ActivoRepositori
 const ActivoUsuarioRepositorio_1 = require("../../SERVICIO/Repositorio/ActivoUsuarioRepositorio");
 const ActivoReviewerGrupoRepositorio_1 = require("../../SERVICIO/Repositorio/ActivoReviewerGrupoRepositorio");
 const ActivoReviewerUsuarioRepositorio_1 = require("../../SERVICIO/Repositorio/ActivoReviewerUsuarioRepositorio");
+const ActivoBusinessUnitRepositorio_1 = require("../../SERVICIO/Repositorio/ActivoBusinessUnitRepositorio");
 const departamentoGetHandler = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const departamentoesSalida = [];
     const departamentos = yield new ActivoRepositorio_1.ActivoRepositorio().obtenerActivo(id);
@@ -24,12 +25,14 @@ const departamentoGetHandler = (id) => __awaiter(void 0, void 0, void 0, functio
     const usuarios = yield new ActivoUsuarioRepositorio_1.ActivoUsuarioRepositorio().obtenerActivoUsuario(id);
     const gruposReviewer = yield new ActivoReviewerGrupoRepositorio_1.ActivoReviewerGrupoRepositorio().obtenerActivoReviewerGrupo(id);
     const usuariosReviewer = yield new ActivoReviewerUsuarioRepositorio_1.ActivoReviewerUsuarioRepositorio().obtenerActivoReviewerUsuario(id);
+    const businessUnit = yield new ActivoBusinessUnitRepositorio_1.ActivoBusinessUnitRepositorio().obtenerActivoBusinessUnit(id);
     departamentos.forEach((departamento) => {
         const departamentoSalida = new ActivoModelo_1.ActivoModelo();
         const grupo = grupos.filter((grupo) => grupo.ast_id_asset === departamento.ast_id_asset);
         const usuario = usuarios.filter((usuario) => usuario.ast_id_asset === departamento.ast_id_asset);
         const grupoReviewer = gruposReviewer.filter((grupo) => grupo.ast_id_asset === departamento.ast_id_asset);
         const usuarioReviewer = usuariosReviewer.filter((usuario) => usuario.ast_id_asset === departamento.ast_id_asset);
+        const businesUnit = businessUnit.filter((bu) => bu.ast_id_asset === departamento.ast_id_asset);
         departamentoSalida.id = departamento.ast_id_asset;
         departamentoSalida.id_organization = departamento.asst_id_organization;
         departamentoSalida.code = departamento.ast_code;
@@ -46,6 +49,7 @@ const departamentoGetHandler = (id) => __awaiter(void 0, void 0, void 0, functio
         departamentoSalida.ast_usuarios = usuario;
         departamentoSalida.ast_reviewer_grupos = grupoReviewer;
         departamentoSalida.asst_reviewer_usuarios = usuarioReviewer;
+        departamentoSalida.ast_business_unit = businesUnit;
         departamentoesSalida.push(departamentoSalida);
     });
     return departamentoesSalida;
@@ -65,7 +69,8 @@ const departamentoPostHandler = (departamento) => __awaiter(void 0, void 0, void
     departamentoEntrada.clas_id_class = departamento.id_clasificacion;
     departamentoEntrada.asst_id_organization = departamento.id_organization;
     departamentoEntrada.ast_review_date = departamento.review_date;
-    yield new ActivoRepositorio_1.ActivoRepositorio().crearActivo(departamentoEntrada);
+    const new_Id = yield new ActivoRepositorio_1.ActivoRepositorio().crearActivo(departamentoEntrada);
+    departamentoSalida.new_id = new_Id[0].NewID;
     departamentoSalida.code = departamentoEntrada.ast_code;
     departamentoSalida.name = departamentoEntrada.ast_name;
     departamentoSalida.description = departamentoEntrada.ast_description;

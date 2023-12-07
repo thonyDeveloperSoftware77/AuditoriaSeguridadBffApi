@@ -26,23 +26,25 @@ class CategoriaRepositorio {
     }
     crearCategoria(CategoriaEntidad) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { ctg_name, ctg_definition, ctg_examples } = CategoriaEntidad;
+            const { ctg_name, ctg_definition, ctg_examples, ctg_type } = CategoriaEntidad;
             //transformar los nombres de las variables a los nombres de la base de datos
             const name = ctg_name;
             const definition = ctg_definition;
             const examples = ctg_examples;
-            const query = `EXEC spi_insertar_category '${name}', '${definition}', '${examples}'`;
+            const type = ctg_type;
+            const query = `EXEC spi_insertar_category '${name}', '${definition}', '${examples}', '${type}'`;
             return yield this._grupo.query(query);
         });
     }
     actualizarCategoria(id, CategoriaEntidad) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { ctg_name, ctg_definition, ctg_examples } = CategoriaEntidad;
+            const { ctg_name, ctg_definition, ctg_examples, ctg_type } = CategoriaEntidad;
             //transformar los nombres de las variables a los nombres de la base de datos
             const nombre = ctg_name;
             const definicion = ctg_definition;
             const ejemplos = ctg_examples;
-            const query = `EXEC spu_actualizar_category ${id}, '${nombre}', '${definicion}', '${ejemplos}'`;
+            const type = ctg_type;
+            const query = `EXEC spu_actualizar_category ${id}, '${nombre}', '${definicion}', '${ejemplos}', '${type}'`;
             const result = yield this._grupo.query(query);
             return result[0].result;
         });

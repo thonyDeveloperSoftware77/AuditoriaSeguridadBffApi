@@ -27,9 +27,10 @@ const postCategoria = (req = express_1.request, res = express_1.response) => __a
     try {
         const { body } = req;
         const categoriaEntrada = new CategoriaModelo_1.CategoriaModelo();
-        categoriaEntrada.nombreCategoria = body.nombre;
-        categoriaEntrada.definicionCategoria = body.definicion;
-        categoriaEntrada.ejemplosCategoria = body.ejemplo;
+        categoriaEntrada.nombre = body.nombre;
+        categoriaEntrada.definicion = body.definicion;
+        categoriaEntrada.ejemplo = body.ejemplo;
+        categoriaEntrada.tipo = body.tipo;
         const categoriaSalida = yield (0, categoriaHandler_1.categoriaPostHandler)(categoriaEntrada);
         res.status(200).json(categoriaSalida);
     }
@@ -44,9 +45,10 @@ const putCategoria = (req = express_1.request, res = express_1.response) => __aw
     try {
         const { body } = req;
         const categoriaEntrada = new CategoriaModelo_1.CategoriaModelo();
-        categoriaEntrada.nombreCategoria = body.nombre;
-        categoriaEntrada.definicionCategoria = body.definicion;
-        categoriaEntrada.ejemplosCategoria = body.ejemplo;
+        categoriaEntrada.nombre = body.nombre;
+        categoriaEntrada.definicion = body.definicion;
+        categoriaEntrada.ejemplo = body.ejemplo;
+        categoriaEntrada.tipo = body.tipo;
         const categoriaSalida = yield (0, categoriaHandler_1.categoriaPutHandler)(body.id, categoriaEntrada);
         res.status(200).json(categoriaSalida);
     }

@@ -8,6 +8,7 @@ export class DepartamentoModelo{
     private _idOrganizacion?: number;
     private _grupos?: DepartamentoGrupoModelo[];
     private _usuarios?: DepartamentoUsuarioModelo[];
+    private _new_id?: number;
 
     public get id(): number | undefined {
         return this._id;
@@ -55,5 +56,13 @@ export class DepartamentoModelo{
 
     public set usuarios(value: DepartamentoUsuarioModelo[] | undefined) {
         this._usuarios = value;
+    }
+
+    public get new_id(): number | undefined {
+        return this._new_id;
+    }
+
+    public set new_id(value: number | undefined) {
+        this._new_id = value;
     }
 }

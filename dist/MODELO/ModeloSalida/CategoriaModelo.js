@@ -2,29 +2,35 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CategoriaModelo = void 0;
 class CategoriaModelo {
-    get idCategoria() {
-        return this._idCategoria;
+    get id() {
+        return this._id;
     }
-    set idCategoria(value) {
-        this._idCategoria = value;
+    set id(value) {
+        this._id = value;
     }
-    get nombreCategoria() {
-        return this._nombreCategoria;
+    get nombre() {
+        return this._nombre;
     }
-    set nombreCategoria(value) {
-        this._nombreCategoria = value;
+    set nombre(value) {
+        this._nombre = value;
     }
-    get definicionCategoria() {
-        return this._definicionCategoria;
+    get definicion() {
+        return this._definicion;
     }
-    set definicionCategoria(value) {
-        this._definicionCategoria = value;
+    set definicion(value) {
+        this._definicion = value;
     }
-    get ejemplosCategoria() {
-        return this._ejemplosCategoria;
+    get ejemplo() {
+        return this._ejemplo;
     }
-    set ejemplosCategoria(value) {
-        this._ejemplosCategoria = value;
+    set ejemplo(value) {
+        this._ejemplo = value;
+    }
+    get tipo() {
+        return this._tipo;
+    }
+    set tipo(value) {
+        this._tipo = value;
     }
 }
 exports.CategoriaModelo = CategoriaModelo;

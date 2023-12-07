@@ -1,38 +1,47 @@
 export class CategoriaModelo {
-    private _idCategoria?: number;
-    private _nombreCategoria?: string;
-    private _definicionCategoria?: string;
-    private _ejemplosCategoria?: string;
+    private _id?: number;
+    private _nombre?: string;
+    private _definicion?: string;
+    private _ejemplo?: string;
+    private _tipo?: number;
 
-    public get idCategoria(): number | undefined {
-        return this._idCategoria;
+    public get id(): number | undefined {
+        return this._id;
     }
 
-    public set idCategoria(value: number | undefined) {
-        this._idCategoria = value;
+    public set id(value: number | undefined) {
+        this._id = value;
     }
 
-    public get nombreCategoria(): string | undefined {
-        return this._nombreCategoria;
+    public get nombre(): string | undefined {
+        return this._nombre;
     }
 
-    public set nombreCategoria(value: string | undefined) {
-        this._nombreCategoria = value;
+    public set nombre(value: string | undefined) {
+        this._nombre = value;
     }
 
-    public get definicionCategoria(): string | undefined {
-        return this._definicionCategoria;
+    public get definicion(): string | undefined {
+        return this._definicion;
     }
 
-    public set definicionCategoria(value: string | undefined) {
-        this._definicionCategoria = value;
+    public set definicion(value: string | undefined) {
+        this._definicion = value;
     }
 
-    public get ejemplosCategoria(): string | undefined {
-        return this._ejemplosCategoria;
+    public get ejemplo(): string | undefined {
+        return this._ejemplo;
     }
 
-    public set ejemplosCategoria(value: string | undefined) {
-        this._ejemplosCategoria = value;
+    public set ejemplo(value: string | undefined) {
+        this._ejemplo = value;
+    }
+
+    public get tipo(): number | undefined {
+        return this._tipo;
+    }
+
+    public set tipo(value: number | undefined) {
+        this._tipo = value;
     }
 }

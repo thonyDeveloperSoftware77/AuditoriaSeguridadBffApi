@@ -18,7 +18,7 @@ const grupoGetHandler = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const grupoes = yield new GrupoRepositorio_1.GrupoRepositorio().obtenerGrupos(id);
     grupoes.forEach((grupo) => {
         const grupoSalida = new GrupoModelo_1.GrupoModelo();
-        grupoSalida.id = grupo.gr_id_organization;
+        grupoSalida.id = grupo.gr_id_groups;
         grupoSalida.nombre = grupo.gr_name;
         grupoSalida.idOrganizacion = grupo.gr_id_organization;
         grupoesSalida.push(grupoSalida);

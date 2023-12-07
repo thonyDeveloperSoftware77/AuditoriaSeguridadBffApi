@@ -16,9 +16,10 @@ export const postCategoria = async (req = request, res = response) => {
     const {body} = req
     const categoriaEntrada = new CategoriaModelo();
     
-    categoriaEntrada.nombreCategoria = body.nombre;
-    categoriaEntrada.definicionCategoria = body.definicion;
-    categoriaEntrada.ejemplosCategoria = body.ejemplo;
+    categoriaEntrada.nombre = body.nombre;
+    categoriaEntrada.definicion = body.definicion;
+    categoriaEntrada.ejemplo = body.ejemplo;
+    categoriaEntrada.tipo = body.tipo;
 
     const categoriaSalida: CategoriaModelo = await categoriaPostHandler(categoriaEntrada);
     res.status(200).json(categoriaSalida);
@@ -35,9 +36,10 @@ export const putCategoria = async (req = request, res = response) => {
     const {body} = req
     const categoriaEntrada = new CategoriaModelo();
 
-    categoriaEntrada.nombreCategoria = body.nombre;
-    categoriaEntrada.definicionCategoria = body.definicion;
-    categoriaEntrada.ejemplosCategoria = body.ejemplo;
+    categoriaEntrada.nombre = body.nombre;
+    categoriaEntrada.definicion = body.definicion;
+    categoriaEntrada.ejemplo = body.ejemplo;
+    categoriaEntrada.tipo = body.tipo;
 
     const categoriaSalida: number= await categoriaPutHandler(body.id, categoriaEntrada);
     res.status(200).json(categoriaSalida);

@@ -13,7 +13,6 @@ export const usuarioGetHandler = async (id: number): Promise<UsersModelo[]> => {
         usuarioSalida.apellido = usuario.usr_surname;
         usuarioSalida.email = usuario.usr_email;
         usuarioSalida.idOrganizacion = usuario.usr_id_organization;
-        usuarioSalida.password = usuario.usr_password;
         usuarioSalida.idGrupo = usuario.usr_id_group;
         usuariosSalida.push(usuarioSalida);
     });

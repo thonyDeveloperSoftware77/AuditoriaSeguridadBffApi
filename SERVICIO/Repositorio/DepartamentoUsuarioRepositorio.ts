@@ -24,9 +24,9 @@ export class DepartamentoUsuarioRepositorio implements IDepartamentoUsuarioRepos
         }
     
         async eliminarDepartamentoUsuario(id: number) {
+            console.log(id)
             const query = `EXEC spd_eliminar_business_unit_users ${id}`;
             const result = await this._grupo.query(query);
-            console.log(result)
             return result[0].result
         }
 }

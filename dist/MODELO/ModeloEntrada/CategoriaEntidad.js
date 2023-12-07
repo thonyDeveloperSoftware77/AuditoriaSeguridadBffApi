@@ -26,6 +26,12 @@ class CategoriaEntidad {
     set ctg_examples(value) {
         this._ctg_examples = value;
     }
+    get ctg_type() {
+        return this._ctg_type;
+    }
+    set ctg_type(value) {
+        this._ctg_type = value;
+    }
 }
 exports.CategoriaEntidad = CategoriaEntidad;
 //# sourceMappingURL=CategoriaEntidad.js.map

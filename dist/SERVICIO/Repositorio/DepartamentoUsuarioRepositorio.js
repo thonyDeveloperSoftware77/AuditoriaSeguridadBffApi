@@ -36,9 +36,9 @@ class DepartamentoUsuarioRepositorio {
     }
     eliminarDepartamentoUsuario(id) {
         return __awaiter(this, void 0, void 0, function* () {
+            console.log(id);
             const query = `EXEC spd_eliminar_business_unit_users ${id}`;
             const result = yield this._grupo.query(query);
-            console.log(result);
             return result[0].result;
         });
     }

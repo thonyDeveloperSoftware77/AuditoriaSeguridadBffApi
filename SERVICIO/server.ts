@@ -17,6 +17,7 @@ import activoGrupoRouter from "../PROYECTO_AUDITORIA/Routes/activoGrupoRouter";
 import activoReviewerUserRouter from "../PROYECTO_AUDITORIA/Routes/activoReviewerUsuarioRouter";
 import activoReviewerGroupRouter from "../PROYECTO_AUDITORIA/Routes/activoReviewerGrupoRouter";
 import tipoActivoRouter from "../PROYECTO_AUDITORIA/Routes/tipoActivoRouter";
+import activoBusinesUnitRouter from "../PROYECTO_AUDITORIA/Routes/activoBusinessUnitRouter";
 
 
 
@@ -39,7 +40,8 @@ class Server{
         activoReviewerUser: '/api/reviewerUser',
         activoReviewerGroup: '/api/reviewerGroup',
         activo: '/api/activo',
-        tipoActivo: '/api/tipoActivo'
+        tipoActivo: '/api/tipoActivo',
+        activoBusinessUnit: '/api/activoBusinessUnit'
     }
    
 
@@ -113,6 +115,7 @@ class Server{
         this.app.use(this.apiPaths.activoReviewerGroup, /*this.authMiddleware.bind(this),*/ activoReviewerGroupRouter);
         this.app.use(this.apiPaths.activo, /*this.authMiddleware.bind(this),*/ activoRouter);
         this.app.use(this.apiPaths.tipoActivo, /*this.authMiddleware.bind(this),*/ tipoActivoRouter);
+        this.app.use(this.apiPaths.activoBusinessUnit, /*this.authMiddleware.bind(this),*/ activoBusinesUnitRouter);
     }
 
     //prueba de conexion

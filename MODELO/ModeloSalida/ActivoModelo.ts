@@ -1,3 +1,4 @@
+import { ActivoBusinessUnitModelo } from "./ActivoBusinessUnitModelo";
 import { ActivoGrupoModelo } from "./ActivoGrupoModelo";
 import { ActivoReviewerGrupoModelo } from "./ActivoReviewerGrupoModelo";
 import { ActivoReviewerUsuarioModelo } from "./ActivoReviewerUsuarioModelo";
@@ -23,6 +24,8 @@ export class ActivoModelo {
     private _ast_usuarios? : ActivoUsuarioModelo[];
     private _ast_reviewer_grupos? : ActivoReviewerGrupoModelo[];
     private _asst_reviewer_usuarios? : ActivoReviewerUsuarioModelo[];
+    private _ast_business_unit? : ActivoBusinessUnitModelo[];
+    private _new_id?: number;
 
     public get id(): number | undefined {
         return this._id;
@@ -138,6 +141,20 @@ export class ActivoModelo {
     }
     public set id_clasificacion(value: number | undefined) {
         this._id_clasificacion = value;
+    }
+    public get ast_business_unit(): ActivoBusinessUnitModelo[] | undefined {
+        return this._ast_business_unit;
+    }
+    public set ast_business_unit(value: ActivoBusinessUnitModelo[] | undefined) {
+        this._ast_business_unit = value;
+    }
+
+    public get new_id(): number | undefined {
+        return this._new_id;
+    }
+
+    public set new_id(value: number | undefined) {
+        this._new_id = value;
     }
 
 

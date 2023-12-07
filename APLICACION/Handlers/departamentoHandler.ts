@@ -31,6 +31,7 @@ export const departamentoGetHandler = async (id: number): Promise<DepartamentoMo
 }
 
 export const departamentoPostHandler = async (departamento: DepartamentoModelo): Promise<DepartamentoModelo> => {
+    console.log("departamento");
     const departamentoEntrada = new DepartamentoEntidad();
     const departamentoSalida = new DepartamentoModelo();
 
@@ -38,7 +39,11 @@ export const departamentoPostHandler = async (departamento: DepartamentoModelo):
     departamentoEntrada.bu_description = departamento.descripcion;
     departamentoEntrada.bu_id_organization = departamento.idOrganizacion;
 
-    await new DepartamentoRepositorio().crearDepartamento(departamentoEntrada);
+    const  new_Id = await new DepartamentoRepositorio().crearDepartamento(departamentoEntrada);
+    console.log(new_Id);
+
+    departamentoSalida.new_id = new_Id[0].NewID;
+    console.log(departamentoSalida.new_id);
     departamentoSalida.nombre = departamentoEntrada.bu_name;
     departamentoSalida.idOrganizacion = departamentoEntrada.bu_id_organization;
     return departamentoSalida;

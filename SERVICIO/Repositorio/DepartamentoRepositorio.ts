@@ -20,7 +20,7 @@ export class DepartamentoRepositorio implements IDepartamentoRepositorio {
             const description = bu_description;
             const id_organization = bu_id_organization;
             const query = `EXEC spi_insertar_business_unit '${name}', '${description}', '${id_organization}'`;
-    
+            console.log("query")  
             return await this._grupo.query(query);
         }
     
@@ -29,8 +29,7 @@ export class DepartamentoRepositorio implements IDepartamentoRepositorio {
             //transformar los nombres de las variables a los nombres de la base de datos
             const  nombre = bu_name;
             const descripcion = bu_description;
-            const id_organization = bu_id_organization;
-            const query = `EXEC spu_actualizar_business_unit ${id}, '${nombre}', '${descripcion}', '${id_organization}'`;
+            const query = `EXEC spu_actualizar_business_unit ${id}, '${nombre}', '${descripcion}'`;
             const result = await this._grupo.query(query);
             return result[0].result
         }

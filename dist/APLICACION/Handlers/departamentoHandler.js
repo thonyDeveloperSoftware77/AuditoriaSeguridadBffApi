@@ -36,12 +36,16 @@ const departamentoGetHandler = (id) => __awaiter(void 0, void 0, void 0, functio
 });
 exports.departamentoGetHandler = departamentoGetHandler;
 const departamentoPostHandler = (departamento) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log("departamento");
     const departamentoEntrada = new DepartamentoEntidad_1.DepartamentoEntidad();
     const departamentoSalida = new DepartamentoModelo_1.DepartamentoModelo();
     departamentoEntrada.bu_name = departamento.nombre;
     departamentoEntrada.bu_description = departamento.descripcion;
     departamentoEntrada.bu_id_organization = departamento.idOrganizacion;
-    yield new DepartamentoRepositorio_1.DepartamentoRepositorio().crearDepartamento(departamentoEntrada);
+    const new_Id = yield new DepartamentoRepositorio_1.DepartamentoRepositorio().crearDepartamento(departamentoEntrada);
+    console.log(new_Id);
+    departamentoSalida.new_id = new_Id[0].NewID;
+    console.log(departamentoSalida.new_id);
     departamentoSalida.nombre = departamentoEntrada.bu_name;
     departamentoSalida.idOrganizacion = departamentoEntrada.bu_id_organization;
     return departamentoSalida;

@@ -7,6 +7,7 @@ import { ActivoRepositorio } from "../../SERVICIO/Repositorio/ActivoRepositorio"
 import { ActivoUsuarioRepositorio } from "../../SERVICIO/Repositorio/ActivoUsuarioRepositorio";
 import { ActivoReviewerGrupoRepositorio } from "../../SERVICIO/Repositorio/ActivoReviewerGrupoRepositorio";
 import { ActivoReviewerUsuarioRepositorio } from "../../SERVICIO/Repositorio/ActivoReviewerUsuarioRepositorio";
+import { ActivoBusinessUnitRepositorio } from "../../SERVICIO/Repositorio/ActivoBusinessUnitRepositorio";
 
 
 export const departamentoGetHandler = async (id: number): Promise<ActivoModelo[]> => {
@@ -16,6 +17,7 @@ export const departamentoGetHandler = async (id: number): Promise<ActivoModelo[]
     const usuarios = await new ActivoUsuarioRepositorio().obtenerActivoUsuario(id);
     const gruposReviewer = await new ActivoReviewerGrupoRepositorio().obtenerActivoReviewerGrupo(id);
     const usuariosReviewer = await new ActivoReviewerUsuarioRepositorio().obtenerActivoReviewerUsuario(id);
+    const businessUnit = await new ActivoBusinessUnitRepositorio().obtenerActivoBusinessUnit(id);
 
     departamentos.forEach((departamento: ActivoEntidad) => {
         const departamentoSalida = new ActivoModelo();
@@ -23,6 +25,7 @@ export const departamentoGetHandler = async (id: number): Promise<ActivoModelo[]
         const usuario = usuarios.filter((usuario: ActivoGrupoEntidad) => usuario.ast_id_asset === departamento.ast_id_asset);
         const grupoReviewer = gruposReviewer.filter((grupo:ActivoUsuarioEntidad) => grupo.ast_id_asset === departamento.ast_id_asset);
         const usuarioReviewer = usuariosReviewer.filter((usuario: ActivoGrupoEntidad) => usuario.ast_id_asset === departamento.ast_id_asset);
+        const businesUnit = businessUnit.filter((bu: ActivoUsuarioEntidad) => bu.ast_id_asset === departamento.ast_id_asset);
         
         departamentoSalida.id = departamento.ast_id_asset;
         departamentoSalida.id_organization = departamento.asst_id_organization;
@@ -40,6 +43,7 @@ export const departamentoGetHandler = async (id: number): Promise<ActivoModelo[]
         departamentoSalida.ast_usuarios = usuario;
         departamentoSalida.ast_reviewer_grupos = grupoReviewer;
         departamentoSalida.asst_reviewer_usuarios = usuarioReviewer;
+        departamentoSalida.ast_business_unit = businesUnit;
         departamentoesSalida.push(departamentoSalida);
     });
 
@@ -61,7 +65,8 @@ export const departamentoPostHandler = async (departamento: ActivoModelo): Promi
     departamentoEntrada.clas_id_class = departamento.id_clasificacion;
     departamentoEntrada.asst_id_organization = departamento.id_organization;
     departamentoEntrada.ast_review_date = departamento.review_date;
-    await new ActivoRepositorio().crearActivo(departamentoEntrada);
+    const new_Id = await new ActivoRepositorio().crearActivo(departamentoEntrada);
+    departamentoSalida.new_id = new_Id[0].NewID;
     departamentoSalida.code = departamentoEntrada.ast_code;
     departamentoSalida.name = departamentoEntrada.ast_name;
     departamentoSalida.description = departamentoEntrada.ast_description;

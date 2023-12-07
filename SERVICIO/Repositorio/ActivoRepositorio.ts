@@ -25,7 +25,7 @@ export class ActivoRepositorio implements IActivoRepositorio {
             const { ast_code, ast_name, ast_description, ast_ubication, lbl_name, a_type_name,cri_id_criteria, ctg_id_category, clas_id_class, asst_id_organization,ast_review_date } = ActivoEntidad;
             //transformar los nombres de las variables a los nombres de la base de datos
     
-
+            console.log(ActivoEntidad)
             const query = `EXEC spu_actualizar_asset ${id}, '${ast_code}', '${ast_name}', '${ast_description}', '${ast_ubication}', '${lbl_name}', '${a_type_name}', '${cri_id_criteria}', '${ctg_id_category}', '${clas_id_class}', '${asst_id_organization}', '${ast_review_date}'`;
             const result = await this._grupo.query(query);
             return result[0].result

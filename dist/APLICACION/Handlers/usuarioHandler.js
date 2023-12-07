@@ -23,7 +23,6 @@ const usuarioGetHandler = (id) => __awaiter(void 0, void 0, void 0, function* ()
         usuarioSalida.apellido = usuario.usr_surname;
         usuarioSalida.email = usuario.usr_email;
         usuarioSalida.idOrganizacion = usuario.usr_id_organization;
-        usuarioSalida.password = usuario.usr_password;
         usuarioSalida.idGrupo = usuario.usr_id_group;
         usuariosSalida.push(usuarioSalida);
     });

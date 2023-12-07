@@ -38,6 +38,12 @@ class DepartamentoModelo {
     set usuarios(value) {
         this._usuarios = value;
     }
+    get new_id() {
+        return this._new_id;
+    }
+    set new_id(value) {
+        this._new_id = value;
+    }
 }
 exports.DepartamentoModelo = DepartamentoModelo;
 //# sourceMappingURL=DepartamentoModelo.js.map

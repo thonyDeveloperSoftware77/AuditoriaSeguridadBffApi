@@ -3,6 +3,7 @@ export class CategoriaEntidad {
     private _ctg_name?: string;
     private _ctg_definition?: string;
     private _ctg_examples?: string;
+    private _ctg_type?:  number;
 
     public get ctg_id_category(): number | undefined {
         return this._ctg_id_category;
@@ -34,5 +35,13 @@ export class CategoriaEntidad {
 
     public set ctg_examples(value: string | undefined) {
         this._ctg_examples = value;
+    }
+
+    public get ctg_type(): number | undefined {
+        return this._ctg_type;
+    }
+
+    public set ctg_type(value: number | undefined) {
+        this._ctg_type = value;
     }
 }

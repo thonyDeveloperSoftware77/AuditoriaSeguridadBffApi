@@ -1,3 +1,4 @@
+import { ActivoBusinessUnitModelo } from "../ModeloSalida/ActivoBusinessUnitModelo";
 import { ActivoGrupoModelo } from "../ModeloSalida/ActivoGrupoModelo";
 import { ActivoReviewerGrupoModelo } from "../ModeloSalida/ActivoReviewerGrupoModelo";
 import { ActivoReviewerUsuarioModelo } from "../ModeloSalida/ActivoReviewerUsuarioModelo";
@@ -23,6 +24,7 @@ export class ActivoEntidad {
     private _ast_usuarios? : ActivoUsuarioModelo[];
     private _ast_reviewer_grupos? : ActivoReviewerGrupoModelo[];
     private _asst_reviewer_usuarios? : ActivoReviewerUsuarioModelo[];
+    private _ast_business_unit? : ActivoBusinessUnitModelo[];
 
 
     public get ast_id_asset(): number | undefined {
@@ -175,5 +177,13 @@ export class ActivoEntidad {
 
     public set asst_id_organization(value: number | undefined) {
         this._asst_id_organization = value;
+    }
+
+    public get ast_business_unit(): ActivoBusinessUnitModelo[] | undefined {
+        return this._ast_business_unit;
+    }
+
+    public set ast_business_unit(value: ActivoBusinessUnitModelo[] | undefined) {
+        this._ast_business_unit = value;
     }
 }

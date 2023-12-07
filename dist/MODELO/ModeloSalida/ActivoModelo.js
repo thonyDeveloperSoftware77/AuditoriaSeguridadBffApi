@@ -116,6 +116,18 @@ class ActivoModelo {
     set id_clasificacion(value) {
         this._id_clasificacion = value;
     }
+    get ast_business_unit() {
+        return this._ast_business_unit;
+    }
+    set ast_business_unit(value) {
+        this._ast_business_unit = value;
+    }
+    get new_id() {
+        return this._new_id;
+    }
+    set new_id(value) {
+        this._new_id = value;
+    }
 }
 exports.ActivoModelo = ActivoModelo;
 //# sourceMappingURL=ActivoModelo.js.map

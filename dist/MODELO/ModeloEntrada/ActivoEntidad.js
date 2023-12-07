@@ -116,6 +116,12 @@ class ActivoEntidad {
     set asst_id_organization(value) {
         this._asst_id_organization = value;
     }
+    get ast_business_unit() {
+        return this._ast_business_unit;
+    }
+    set ast_business_unit(value) {
+        this._ast_business_unit = value;
+    }
 }
 exports.ActivoEntidad = ActivoEntidad;
 //# sourceMappingURL=ActivoEntidad.js.map
