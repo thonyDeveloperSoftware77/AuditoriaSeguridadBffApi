@@ -32,6 +32,7 @@ const activoReviewerUsuarioRouter_1 = __importDefault(require("../PROYECTO_AUDIT
 const activoReviewerGrupoRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/activoReviewerGrupoRouter"));
 const tipoActivoRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/tipoActivoRouter"));
 const activoBusinessUnitRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/activoBusinessUnitRouter"));
+const valoracionActivosRouter_1 = __importDefault(require("../PROYECTO_AUDITORIA/Routes/valoracionActivosRouter"));
 class Server {
     constructor() {
         this.apiPaths = {
@@ -51,7 +52,8 @@ class Server {
             activoReviewerGroup: '/api/reviewerGroup',
             activo: '/api/activo',
             tipoActivo: '/api/tipoActivo',
-            activoBusinessUnit: '/api/activoBusinessUnit'
+            activoBusinessUnit: '/api/activoBusinessUnit',
+            valoracionActivo: '/api/valoracionActivo'
         };
         this.app = (0, express_1.default)();
         this.port = process.env.PORT || '8000';
@@ -121,6 +123,7 @@ class Server {
         this.app.use(this.apiPaths.activo, /*this.authMiddleware.bind(this),*/ activoRouter_1.default);
         this.app.use(this.apiPaths.tipoActivo, /*this.authMiddleware.bind(this),*/ tipoActivoRouter_1.default);
         this.app.use(this.apiPaths.activoBusinessUnit, /*this.authMiddleware.bind(this),*/ activoBusinessUnitRouter_1.default);
+        this.app.use(this.apiPaths.valoracionActivo, /*this.authMiddleware.bind(this),*/ valoracionActivosRouter_1.default);
     }
     //prueba de conexion
     listen() {
