@@ -30,6 +30,7 @@ const postGrupo = (req = express_1.request, res = express_1.response) => __await
         const grupoEntrada = new GrupoModelo_1.GrupoModelo();
         grupoEntrada.nombre = body.nombre;
         grupoEntrada.idOrganizacion = body.idOrganizacion;
+        grupoEntrada.rol = body.rol;
         const grupoSalida = yield (0, grupoHandler_1.grupoPostHandler)(grupoEntrada);
         res.status(200).json(grupoSalida);
     }
@@ -46,6 +47,7 @@ const putGrupo = (req = express_1.request, res = express_1.response) => __awaite
         const grupoEntrada = new GrupoModelo_1.GrupoModelo();
         grupoEntrada.nombre = body.nombre;
         grupoEntrada.idOrganizacion = body.idOrganizacion;
+        grupoEntrada.rol = body.rol;
         const grupoSalida = yield (0, grupoHandler_1.grupoPutHandler)(body.id, grupoEntrada);
         res.status(200).json(grupoSalida);
     }

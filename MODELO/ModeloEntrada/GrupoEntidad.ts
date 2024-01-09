@@ -2,6 +2,7 @@ export class GrupoEntidad {
     private _gr_id_groups?: number;
     private _gr_name?: string;
     private _gr_id_organization?: number;
+    private _gr_rol?: number;
 
     public get gr_id_groups(): number | undefined {
         return this._gr_id_groups;
@@ -25,5 +26,13 @@ export class GrupoEntidad {
 
     public set gr_id_organization(value: number | undefined) {
         this._gr_id_organization = value;
+    }
+
+    public get gr_rol(): number | undefined {
+        return this._gr_rol;
+    }
+
+    public set gr_rol(value: number | undefined) {
+        this._gr_rol = value;
     }
 }

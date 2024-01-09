@@ -20,6 +20,7 @@ export const postGrupo = async (req = request, res = response) => {
     
     grupoEntrada.nombre = body.nombre;
     grupoEntrada.idOrganizacion = body.idOrganizacion;
+    grupoEntrada.rol = body.rol;
 
     const grupoSalida: GrupoModelo = await grupoPostHandler(grupoEntrada);
     res.status(200).json(grupoSalida);
@@ -37,6 +38,7 @@ export const putGrupo = async (req = request, res = response) => {
     const grupoEntrada = new GrupoModelo();
     grupoEntrada.nombre = body.nombre;
     grupoEntrada.idOrganizacion = body.idOrganizacion;
+    grupoEntrada.rol = body.rol;
 
     const grupoSalida: number= await grupoPutHandler(body.id, grupoEntrada);
     res.status(200).json(grupoSalida);

@@ -20,6 +20,12 @@ class GrupoModelo {
     set idOrganizacion(value) {
         this._idOrganizacion = value;
     }
+    get rol() {
+        return this._rol;
+    }
+    set rol(value) {
+        this._rol = value;
+    }
 }
 exports.GrupoModelo = GrupoModelo;
 //# sourceMappingURL=GrupoModelo.js.map

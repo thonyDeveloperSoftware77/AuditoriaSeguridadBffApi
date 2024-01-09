@@ -19,6 +19,7 @@ import activoReviewerGroupRouter from "../PROYECTO_AUDITORIA/Routes/activoReview
 import tipoActivoRouter from "../PROYECTO_AUDITORIA/Routes/tipoActivoRouter";
 import activoBusinesUnitRouter from "../PROYECTO_AUDITORIA/Routes/activoBusinessUnitRouter";
 import valoracionActivosRouter from "../PROYECTO_AUDITORIA/Routes/valoracionActivosRouter";
+import verifyRouter from "../PROYECTO_AUDITORIA/Routes/verifyRouter";
 
 
 
@@ -43,7 +44,8 @@ class Server{
         activo: '/api/activo',
         tipoActivo: '/api/tipoActivo',
         activoBusinessUnit: '/api/activoBusinessUnit',
-        valoracionActivo: '/api/valoracionActivo'
+        valoracionActivo: '/api/valoracionActivo',
+        verify: '/api/verify'
     }
    
 
@@ -119,6 +121,7 @@ class Server{
         this.app.use(this.apiPaths.tipoActivo, /*this.authMiddleware.bind(this),*/ tipoActivoRouter);
         this.app.use(this.apiPaths.activoBusinessUnit, /*this.authMiddleware.bind(this),*/ activoBusinesUnitRouter);
         this.app.use(this.apiPaths.valoracionActivo, /*this.authMiddleware.bind(this),*/ valoracionActivosRouter);
+        this.app.use(this.apiPaths.verify, /*this.authMiddleware.bind(this),*/ verifyRouter);
     }
 
     //prueba de conexion

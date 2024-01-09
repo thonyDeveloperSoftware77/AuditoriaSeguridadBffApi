@@ -21,6 +21,7 @@ const grupoGetHandler = (id) => __awaiter(void 0, void 0, void 0, function* () {
         grupoSalida.id = grupo.gr_id_groups;
         grupoSalida.nombre = grupo.gr_name;
         grupoSalida.idOrganizacion = grupo.gr_id_organization;
+        grupoSalida.rol = grupo.gr_rol;
         grupoesSalida.push(grupoSalida);
     });
     return grupoesSalida;
@@ -31,9 +32,11 @@ const grupoPostHandler = (grupo) => __awaiter(void 0, void 0, void 0, function* 
     const grupoSalida = new GrupoModelo_1.GrupoModelo();
     grupoEntrada.gr_name = grupo.nombre;
     grupoEntrada.gr_id_organization = grupo.idOrganizacion;
+    grupoEntrada.gr_rol = grupo.rol;
     yield new GrupoRepositorio_1.GrupoRepositorio().crearGrupo(grupoEntrada);
     grupoSalida.nombre = grupoEntrada.gr_name;
     grupoSalida.idOrganizacion = grupoEntrada.gr_id_organization;
+    grupoSalida.rol = grupoEntrada.gr_rol;
     return grupoSalida;
 });
 exports.grupoPostHandler = grupoPostHandler;
@@ -41,6 +44,7 @@ const grupoPutHandler = (id, grupo) => __awaiter(void 0, void 0, void 0, functio
     const grupoEntrada = new GrupoEntidad_1.GrupoEntidad();
     grupoEntrada.gr_name = grupo.nombre;
     grupoEntrada.gr_id_organization = grupo.idOrganizacion;
+    grupoEntrada.gr_rol = grupo.rol;
     const grupoActualizada = yield new GrupoRepositorio_1.GrupoRepositorio().actualizarGrupo(id, grupoEntrada);
     return grupoActualizada;
 });

@@ -4,7 +4,9 @@
   "description": "Api de auditoria de seguridad",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node src",
+    "dev":"nodemon src",
+    "test": "mocha --recursive ./test"
   },
   "author": "ThonyDev77",
   "license": "ISC",

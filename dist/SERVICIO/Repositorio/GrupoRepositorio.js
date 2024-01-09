@@ -26,24 +26,24 @@ class GrupoRepositorio {
     }
     crearGrupo(GrupoEntidad) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { gr_name, gr_id_organization } = GrupoEntidad;
+            const { gr_name, gr_id_organization, gr_rol } = GrupoEntidad;
             //transformar los nombres de las variables a los nombres de la base de datos
             const name = gr_name;
             const id_organization = gr_id_organization;
-            const query = `EXEC spi_insertar_groups '${name}', '${id_organization}'`;
+            const query = `EXEC spi_insertar_groups '${name}', '${id_organization}', '${gr_rol}'`;
             return yield this._grupo.query(query);
         });
     }
     actualizarGrupo(id, GrupoEntidad) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { gr_id_organization, gr_name } = GrupoEntidad;
+            const { gr_id_organization, gr_name, gr_rol } = GrupoEntidad;
             //transformar los nombres de las variables a los nombres de la base de datos
             const nombre = gr_name;
             const id_organization = gr_id_organization;
             console.log(id_organization);
             console.log(nombre);
             console.log(id);
-            const query = `EXEC spu_actualizar_groups ${id}, '${nombre}', '${id_organization}'`;
+            const query = `EXEC spu_actualizar_groups ${id}, '${nombre}', '${id_organization}', '${gr_rol}'`;
             const result = yield this._grupo.query(query);
             return result[0].result;
         });

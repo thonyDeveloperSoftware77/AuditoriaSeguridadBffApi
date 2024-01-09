@@ -20,6 +20,12 @@ class GrupoEntidad {
     set gr_id_organization(value) {
         this._gr_id_organization = value;
     }
+    get gr_rol() {
+        return this._gr_rol;
+    }
+    set gr_rol(value) {
+        this._gr_rol = value;
+    }
 }
 exports.GrupoEntidad = GrupoEntidad;
 //# sourceMappingURL=GrupoEntidad.js.map
