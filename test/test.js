@@ -1,5 +1,8 @@
+import { assert } from 'chai';
 const sum = (a, b) => a + b;
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+describe('Sum', function() {
+  it('adds 1 + 2 to equal 3', function() {
+    assert.equal(sum(1, 2), 3);
+  });
 });
